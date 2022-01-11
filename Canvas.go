@@ -153,3 +153,7 @@ func (c *Canvas) AddImage(texture *Texture, pMin, pMax image.Point) {
 func (c *Canvas) AddImageV(texture *Texture, pMin, pMax, uvMin, uvMax image.Point, col color.Color) {
 	c.drawlist.AddImageV(texture.id, ToVec2(pMin), ToVec2(pMax), ToVec2(uvMin), ToVec2(uvMax), ToVec4Color(col))
 }
+
+func (c *Canvas) AddImageVV(texture *Texture, pMin, pMax image.Point, uvMin, uvMax imgui.Vec2, col color.Color) {
+	c.drawlist.AddImageV(texture.id, ToVec2(pMin), ToVec2(pMax), uvMin, uvMax, ToVec4Color(col))
+}
